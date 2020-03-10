@@ -16,7 +16,7 @@
 <img src="logoetiko.svg" width="447.029" height="95.04" />
 </div>
  <div class="container-fluid">
-Specyfikacja: ${specyfikacja} Nazwa: ${nazwa}<br>
+Specyfikacja: ${specyfikacja}<br> Nazwa: ${nazwa}<br>Wykrojnik: ${wykrojnik}<br>Materiał: ${material}<br>Szerokość Materiału: ${szerokoscMaterialu}<br>Wymiar Etykiety: ${wymiarEtykiety}<br>
 </div>
 </body>
 </html>

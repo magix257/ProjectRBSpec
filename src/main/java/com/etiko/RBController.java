@@ -34,15 +34,31 @@ public class RBController {
 								 "VANISH OXY 500g/600g  (MC Primecoat)", "VANISH ZING 500g/600g  (Silvervac)", "VANISH OXY 500g/600g  (PE 85 Top White)", "Vitroclean 250ml", "DESTOP 1,25 L KOMPLET", 
 								 "SUNSHINE 4L  FRONT + BACK", "CMC / Finish 250ml", "TIRET / DESTOP 1L", "Titan 1,5L", "Titan 2L",
 								 "Titan 3L", "Titan 4L", "Horizon 4L"};
-		String[] wykrojnikA = new String[20];
-		String[] materialA = new String[20];
-		String[] szerokoscMaterialuA = new String[20];
-		String[] wymiarEtykietyA = new String[20];
+		String[] wykrojnikA = {"4", "5", "55", "5 GOLD", "222", 
+				 "33", "33 GOLD", "333", "9", "12", 
+				 "211", "41", "45", "50", "51",
+				 "52", "53", "57"};
+		String[] materialA = {"MC FASSON MC PRIMECOAT S2000N", "MC FASSON MC PRIMECOAT S2000N", "FOLIA FASSON PE 85 TOP WHITE S692N", "SREBRNY Raflatac SILVERVAC RP 51", "MC FASSON MC PRIMECOAT S2000N", 
+				 "MC FASSON MC PRIMECOAT S2000N", "SREBRNY Raflatac SILVERVAC RP 51", "FOLIA FASSON PE 85 TOP WHITE S692N", "MC FASSON MC PRIMECOAT S2000N", "MC FASSON MC PRIMECOAT S2045", 
+				 "FOLIA FASSON PE 85 TOP WHITE S692N", "FOLIA FASSON PE 85 TOP WHITE S692N", "MC FASSON MC PRIMECOAT S2000N", "FOLIA Raflatac PE WHITE FTC 85 RP 37", "FOLIA FASSON PE 85 TOP WHITE S4700",
+				 "FOLIA FASSON PE 85 TOP WHITE S4700", "FOLIA FASSON PE 85 TOP WHITE S4700", "FOLIA Raflatac PE WHITE FTC 85 RP 37"};
+		String[] szerokoscMaterialuA = {"285", "260", "265", "260", "370", 
+				 "300", "300", "300", "228", "331", 
+				 "415", "310", "325", "333", "338",
+				 "365", "395", "390"};
+		String[] wymiarEtykietyA = {"85 x 347 mm", "116 x 347 mm", "116 x 347 mm", "116 x 347 mm", "116 x 283 mm", 
+				 "90 x 283 mm", "90 x 283 mm", "90 x 283 mm", "104 x 70,5 mm", "154 x 82 mm", 
+				 "195 x 130 mm", "70  x 86,9 mm", "148 x 74,47 mm", "151 x 89 mm", "158 x 92,35 mm",
+				 "171 x 113,6 mm", "185 x 113,60 mm", "182,5 x 146 mm"};
 
 				BufferedReader fileReader = null;
-				String linia = "";
 				String specyfikacja = "";
 				String nazwa = "";
+				String wykrojnik = "";
+				String material = "";
+				String szerokoscMaterialu = "";
+				String wymiarEtykiety = "";
+				
 				String koniec = "";
 				
 				    
@@ -55,6 +71,11 @@ public class RBController {
 				    		if (koniec.contains(specyfikacjaA[a])) {
 				    			specyfikacja = 	specyfikacjaA[a];
 				    			nazwa = nazwaA[a];
+				    			wykrojnik = wykrojnikA[a];
+				    			material = materialA[a];
+				    			szerokoscMaterialu = szerokoscMaterialuA[a];
+				    			wymiarEtykiety = wymiarEtykietyA[a];
+				    			
 				    			break main_loop;
 					    	}	
 				    	}
@@ -64,22 +85,12 @@ public class RBController {
 			    }
 				m.addAttribute("specyfikacja", specyfikacja);
     			m.addAttribute("nazwa", nazwa);
+    			m.addAttribute("wykrojnik", wykrojnik);
+    			m.addAttribute("material", material);
+    			m.addAttribute("szerokoscMaterialu", szerokoscMaterialu);
+    			m.addAttribute("wymiarEtykiety", wymiarEtykiety);
     			
 			return "result.jsp";
 }
 	
 }
-
-//if ((koniec.contains(specyfikacjaA[a]))&&(koniec.contains("<egLay:name>"))){
-//	specyfikacja = specyfikacjaA[a];
-//	nazwa = nazwaA[a];
-//	break main_loop;
-//	
-//}
-//else {
-//	linia = "false";
-//	m.addAttribute("nazwa", linia);
-//}
-//for (int a=0; a<specyfikacjaA.length; a++) {
-//}
-//main_loop:
