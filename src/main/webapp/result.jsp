@@ -16,7 +16,33 @@
 <img src="logoetiko.svg" width="447.029" height="95.04" />
 </div>
  <div class="container-fluid">
-Specyfikacja: ${specyfikacja}<br> Nazwa: ${nazwa}<br>Wykrojnik: ${wykrojnik}<br>Materiał: ${material}<br>Szerokość Materiału: ${szerokoscMaterialu}<br>Wymiar Etykiety: ${wymiarEtykiety}<br>
+ <div class="container">
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Specyfikacja</th>
+        <th>Nazwa</th>
+        <th>Wykrojnik</th>
+        <th>Materiał</th>
+        <th>Szerokość Materiału</th>
+        <th>Wymiar Etykiety</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>${specyfikacja}</b></td>
+        <td>${nazwa}</td>
+        <td><b>${wykrojnik}</b></td>
+        <td>${material}</td>
+        <td>${szerokoscMaterialu}</td>
+        <td>${wymiarEtykiety}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+ </div>
+
 </div>
 </body>
 </html>

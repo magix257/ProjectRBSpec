@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +23,12 @@ public class RBController {
 	@RequestMapping("check")
 	public String check(@RequestParam File file, Model m) throws IOException {
 		
-		String filePath = file.getAbsolutePath();
+		//String filePath = file.getPath();
+	
 		
 		String[] specyfikacjaA = {"D0025873", "D0025876", "D8324258", "D8114311", "D0327096", 
 								 "D0211314", "D8114310", "D8324257", "0062980", "D0261554", 
-								 "D0209553", "D0024168", "D0024311", "D8058348", "D8058320",
+								 "D0209553", "D0024168", "D0024311", "D8058348", "D8056020",
 								 "D8058361", "D8058362", "D8361571"};
 		String[] nazwaA = 		{"Resolve", "VANISH OXI 1 KG single", "VANISH OXI 1 KG folia", "VANISH OXI 1 KG (Silvervac)", "Vanish 750g nowe pudełko", 
 								 "VANISH OXY 500g/600g  (MC Primecoat)", "VANISH ZING 500g/600g  (Silvervac)", "VANISH OXY 500g/600g  (PE 85 Top White)", "Vitroclean 250ml", "DESTOP 1,25 L KOMPLET", 
@@ -62,7 +62,7 @@ public class RBController {
 				String koniec = "";
 				
 				    
-					fileReader = new BufferedReader(new FileReader(filePath, StandardCharsets.UTF_8));
+					fileReader = new BufferedReader(new FileReader(file));
 					//koniec= fileReader.readLine();
 					main_loop:
 				    	while (koniec != null) {
@@ -78,17 +78,28 @@ public class RBController {
 				    			
 				    			break main_loop;
 					    	}	
+				    		
 				    	}
 				    }
 				if (fileReader != null) {
 			        fileReader.close();
 			    }
+				else if (fileReader == null) {
+	    			specyfikacja = "";
+	    			nazwa = "";
+	    			wykrojnik = "";
+	    			material = "";
+	    			szerokoscMaterialu = "";
+	    			wymiarEtykiety = "";
+	    		
+	    		}
 				m.addAttribute("specyfikacja", specyfikacja);
     			m.addAttribute("nazwa", nazwa);
     			m.addAttribute("wykrojnik", wykrojnik);
     			m.addAttribute("material", material);
     			m.addAttribute("szerokoscMaterialu", szerokoscMaterialu);
     			m.addAttribute("wymiarEtykiety", wymiarEtykiety);
+    			
     			
 			return "result.jsp";
 }
