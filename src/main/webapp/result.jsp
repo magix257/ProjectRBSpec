@@ -16,7 +16,7 @@
 <img src="logoetiko.svg" width="447.029" height="95.04" />
 </div>
  <div class="container-fluid">
-${result}<br>
+Specyfikacja: ${specyfikacja} Nazwa: ${nazwa}<br>
 </div>
 </body>
 </html>
