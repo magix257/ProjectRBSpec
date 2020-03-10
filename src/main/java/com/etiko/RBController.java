@@ -48,7 +48,7 @@ public class RBController {
 				 "365", "395", "390"};
 		String[] wymiarEtykietyA = {"85 x 347 mm", "116 x 347 mm", "116 x 347 mm", "116 x 347 mm", "116 x 283 mm", 
 				 "90 x 283 mm", "90 x 283 mm", "90 x 283 mm", "104 x 70,5 mm", "154 x 82 mm", 
-				 "195 x 130 mm", "70  x 86,9 mm", "148 x 74,47 mm", "151 x 89 mm", "158 x 92,35 mm",
+				 "195 x 130 mm", "70  x 86,9 mm", "148 x 74,47 mm", "151 x 89 mm", "157 x 92,35 mm",
 				 "171 x 113,6 mm", "185 x 113,60 mm", "182,5 x 146 mm"};
 
 				BufferedReader fileReader = null;
